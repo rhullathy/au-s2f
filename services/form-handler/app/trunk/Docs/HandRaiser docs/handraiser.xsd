@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by Konur Unyelioglu (Compuware Corporation) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="handraiser">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="campaignID">
+					<xsd:annotation>
+						<xsd:documentation>
+							Unique campaign identifier
+						</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="24"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="contact">
+					<xsd:annotation>
+						<xsd:documentation>
+							Contact information
+						</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="title" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Ms.
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Mr.
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="firstName" nillable="false">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="1"/>
+										<xsd:maxLength value="40"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="lastName" nillable="false">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="1"/>
+										<xsd:maxLength value="40"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="language" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="EN"/>
+										<xsd:enumeration value="ES"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="email" type="EmailAddress" minOccurs="0"/>
+							<xsd:element name="phone" type="GenericPhone" minOccurs="0"/>
+							<xsd:element name="mobile" type="GenericPhone" minOccurs="0"/>
+							<xsd:element name="address" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="street1" minOccurs="0">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="60"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="street2" minOccurs="0">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="40"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="city" minOccurs="0">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="40"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="state" minOccurs="0">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:maxLength value="2"/>
+													<xsd:minLength value="2"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="zip" nillable="false">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:minLength value="1"/>
+													<xsd:maxLength value="10"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="country" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>
+													USA, Canada or Mexico.
+												</xsd:documentation>
+											</xsd:annotation>
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="US"/>
+													<xsd:enumeration value="CA"/>
+													<xsd:enumeration value="MX"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="desiredCar" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="model">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="VW0000">
+											<xsd:annotation>
+												<xsd:documentation>
+													Wolkswagen
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0101">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Jetta
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0201">
+											<xsd:annotation>
+												<xsd:documentation>
+													Passat
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0202">
+											<xsd:annotation>
+												<xsd:documentation>
+													Passat Sedan
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0203">
+											<xsd:annotation>
+												<xsd:documentation>
+													Passat Wagon
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0301">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW GLI
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0401">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW CC
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0501">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW New Beetle
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0502">
+											<xsd:annotation>
+												<xsd:documentation>
+													New Beetle Convertible
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0601">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Eos
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0701">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Tiguan
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0801">
+											<xsd:annotation>
+												<xsd:documentation>
+													Vw Touareg 2
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW0901">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Routan
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW1001">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW GTI
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW1201">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Rabbit
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW1301">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Jetta Sportwagen
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="VW1401">
+											<xsd:annotation>
+												<xsd:documentation>
+													VW Golf
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="engineVersion" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="A">
+											<xsd:annotation>
+												<xsd:documentation>
+													Other
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="B">
+											<xsd:annotation>
+												<xsd:documentation>
+													Gasoline
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="D">
+											<xsd:annotation>
+												<xsd:documentation>
+													Diesel
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="E">
+											<xsd:annotation>
+												<xsd:documentation>
+													Electric
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="F">
+											<xsd:annotation>
+												<xsd:documentation>
+													Benzine Ethanol
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="G">
+											<xsd:annotation>
+												<xsd:documentation>
+													LPG/Gas
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="H">
+											<xsd:annotation>
+												<xsd:documentation>
+													Hybrid
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="N">
+											<xsd:annotation>
+												<xsd:documentation>
+													Not known
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="O">
+											<xsd:annotation>
+												<xsd:documentation>
+													Fuel Oil
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="enginePower" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>
+										Engine power in horsepower
+									</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:integer">
+										<xsd:minInclusive value="1"/>
+										<xsd:maxInclusive value="9999"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="transmissionType" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Manual
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Automatic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Tiptronic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0004">
+											<xsd:annotation>
+												<xsd:documentation>
+													Multitronic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0005">
+											<xsd:annotation>
+												<xsd:documentation>
+													DSG
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0006">
+											<xsd:annotation>
+												<xsd:documentation>
+													S tronic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0007">
+											<xsd:annotation>
+												<xsd:documentation>
+													R tronic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0008">
+											<xsd:annotation>
+												<xsd:documentation>
+													Shiftmatic
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="plannedPurchaseDate" type="xsd:date" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Planned purchase date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="typeOfPurchase" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													New Car
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Employee Car
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Used Car
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0004">
+											<xsd:annotation>
+												<xsd:documentation>
+													Undecided
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0005">
+											<xsd:annotation>
+												<xsd:documentation>
+													Certified Preloved Car
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0009">
+											<xsd:annotation>
+												<xsd:documentation>
+													Answer denied
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="plannedUsage" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Personal
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Business
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Personal and Business
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0009">
+											<xsd:annotation>
+												<xsd:documentation>
+													Answer denied
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="plannedFinancingType" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Purchase
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Leasing
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Financing
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0004">
+											<xsd:annotation>
+												<xsd:documentation>
+													Undecided
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0009">
+											<xsd:annotation>
+												<xsd:documentation>
+													Answer denied
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="currentCar" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="brand" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Two character long brand description - complete list available upon request</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:pattern value="[A-Z][A-Z]"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="model" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Model description - complete list available upon request</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="6"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="modelYear" type="xsd:gYear" minOccurs="0"/>
+							<xsd:element name="mileage" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:int">
+										<xsd:totalDigits value="7"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="purchaseDate" type="xsd:date" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Purchase date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="registrationDate" type="xsd:date" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Registration date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="usage" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Personal
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Business
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Personal and Business
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0009">
+											<xsd:annotation>
+												<xsd:documentation>
+													Answer denied
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="financingType" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="0001">
+											<xsd:annotation>
+												<xsd:documentation>
+													Purchase
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0002">
+											<xsd:annotation>
+												<xsd:documentation>
+													Leasing
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0003">
+											<xsd:annotation>
+												<xsd:documentation>
+													Financing
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0004">
+											<xsd:annotation>
+												<xsd:documentation>
+													Undecided
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+										<xsd:enumeration value="0009">
+											<xsd:annotation>
+												<xsd:documentation>
+													Answer denied
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:enumeration>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="endOfFinancingDate" type="xsd:date" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>End of financing date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="survey" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="SurveyID" type="xsd:string"/>
+							<xsd:element name="SurveyItems">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SurveyItem" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Question" type="xsd:string"/>
+													<xsd:element name="Answer" type="xsd:string"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="links" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="linkId1" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="linkId2" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="linkId3" type="xsd:string" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			    <xsd:element name="BPID" minOccurs="0">
+				  <xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="50"/>
+					</xsd:restriction>
+				  </xsd:simpleType>
+			    </xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="PhoneNumber">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{10}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmailAddress">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="241"/>
+			<xsd:minLength value="0"/>
+			<xsd:pattern value="[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+)*@[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+(\.[A-Za-z0-9!#-'\*\+\-/=\?\^_`\{-~]+)*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="GenericPhone">
+		<xsd:simpleContent>
+			<xsd:extension base="PhoneNumber">
+				<xsd:attribute name="preferred" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>
+							If preferred number, true, otherwise false
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

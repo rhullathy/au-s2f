@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Superset form data-->
+<handraiser>
+	<campaignID>USVW-CE-JRMASTER-RSP</campaignID>
+	<contact>
+		<title>0001</title>
+		<firstName>John</firstName>
+		<lastName>Doe</lastName>
+		<language>EN</language>
+		<email>john.doe@test.net</email>
+		<phone preferred="true">1234567890</phone>
+		<mobile preferred="false">3334445555</mobile>
+		<address>
+			<street1>123 State Street</street1>
+			<street2>Apt. 1</street2>
+			<city>Detroit</city>
+			<state>MI</state>
+			<zip>48226</zip>
+			<country>US</country>
+		</address>
+	</contact>
+	<desiredCar>
+	  <model>VW0000</model>
+		<engineVersion>A</engineVersion>
+		<enginePower>150</enginePower>
+		<transmissionType>0001</transmissionType>
+		<plannedPurchaseDate>2009-08-13</plannedPurchaseDate>
+		<typeOfPurchase>0001</typeOfPurchase>
+		<plannedUsage>0001</plannedUsage>
+		<plannedFinancingType>0001</plannedFinancingType>
+	</desiredCar>
+	<desiredCar>
+	  <model>VW0101</model>
+		<engineVersion>A</engineVersion>
+		<enginePower>150</enginePower>
+		<transmissionType>0001</transmissionType>
+		<plannedPurchaseDate>2009-08-13</plannedPurchaseDate>
+		<typeOfPurchase>0001</typeOfPurchase>
+		<plannedUsage>0001</plannedUsage>
+		<plannedFinancingType>0001</plannedFinancingType>
+	</desiredCar>
+	<currentCar>
+		<brand>AU</brand>
+		<model>4A</model>
+		<modelYear>2001</modelYear>
+		<mileage>110000</mileage>
+		<purchaseDate>2001-03-13</purchaseDate>
+		<registrationDate>2001-03-13</registrationDate>
+		<usage>0001</usage>
+		<financingType>0001</financingType>
+		<endOfFinancingDate>2006-03-13</endOfFinancingDate>
+	</currentCar>
+</handraiser>

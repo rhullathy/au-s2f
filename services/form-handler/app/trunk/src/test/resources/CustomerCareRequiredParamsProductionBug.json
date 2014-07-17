@@ -1,0 +1,26 @@
+{
+"brand":"AU",
+"campaignID":"USAU-CE-ONL-WB-A6-RG",
+"firstName":"SendTo",
+"lastName":"All",
+"zip":"48045",
+"city":"St. Clair Shores",
+"state":"MI",
+"street1":"1234 Addr",
+"mobile":"3132277300",
+"surveyId":"100",
+"surveyQ1":"q_moi_audi",
+"surveyA1":"AUA401_AUA400",
+"surveyQ2":"q_moi_audi",
+"surveyA2":"AUQ501_AUQ501",
+"vehicles":[
+     {
+      "modelName":"AUA401",
+      "modelDerivatID":"AUA400"
+     },
+     {
+      "modelName":"AUQ501",
+      "modelDerivatID":"AUQ501"
+     }
+]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	    
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="locations">
+		<list>
+			<value>classpath:local-config.properties</value>
+			<value>file:/opt/software/properties/form-handler/int-config.properties</value>
+			<value>file:/opt/software/properties/form-handler/qa-config.properties</value>
+			<value>file:/opt/software/properties/form-handler/prod-config.properties</value>
+		</list>
+		</property>
+		<property name="ignoreInvalidKeys" value="true"></property>
+		<property name="ignoreResourceNotFound" value="true"></property>
+	</bean>
+ 	<bean id="leadsValidator" class="com.vw.formhandler.webspring.mvc.validators.LeadsValidator"/>
+ 	<bean id="kubaValidator" class="com.vw.formhandler.webspring.mvc.validators.KubaValidator"/>
+ 	<bean id="customerCareValidator" class="com.vw.formhandler.webspring.mvc.validators.CustomerCareValidator"/>
+ 	
+	<bean id="leadsKubaVOMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="classesToBeBound">
+            <list>
+                <value>com.vw.formhandler.webspring.model.leads.LeadsServiceVO</value>
+                <value>com.vw.formhandler.webspring.model.kuba.KubaServiceVO</value>
+                <value>com.vw.formhandler.webspring.model.customercare.CustomerCareServiceVO</value>
+                <value>com.vw.formhandler.webspring.model.customercare.CustomerCareServiceResponseVO</value>
+                <value>com.vw.formhandler.webspring.model.leads.LeadsServiceResponseVO</value>
+                <value>com.vw.formhandler.webspring.model.kuba.KubaServiceResponseVO</value>
+                <value>com.vw.formhandler.webspring.mvc.model.ServiceResponseException</value>
+            </list>
+        </property>
+	</bean>
+	
+	<bean id="httpClientUtil" class="com.vw.formhandler.common.HttpClientUtil"></bean>
+</beans>

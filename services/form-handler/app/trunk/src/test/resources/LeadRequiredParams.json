@@ -1,0 +1,16 @@
+{
+"brand":"VW",
+"requestType":"quote",
+"sourceType":"vw",
+"subType":"request",
+"firstName":"testfirst",
+"lastName":"testlast",
+"zip":"48195",
+"dealerId":"480887",
+"vehicles":[
+{"modelName":"Jetta","modelCode":"SE"},
+{"modelName":"Passat","modelCode":"GLS"}
+],
+"email":"asdf@asdf.com",
+"phone":"3414321234"
+}

@@ -1,0 +1,17 @@
+{
+"brand":"AU",
+"vin":"123456789",
+"contactFirstName":"first_name",
+"contactLastName":"last_name",
+"contactAddress1":"contact_address_1",
+"contactAddress2":"contact_address_2",
+"contactCity":"Detroit",
+"contactState":"MI",
+"contactZipCode":"12345",
+"contactEmail":"abc@abc.com",
+"contactPhone":"212-233-2345",
+"contactEmailIndicator":"Y",
+"country":"US",
+"isOwner":"Y",
+"comments":"comments"
+}
